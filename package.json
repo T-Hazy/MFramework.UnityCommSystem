@@ -1,7 +1,7 @@
 {
-  "name": "com.thazy.mframework.commsystem",
+  "name": "thazy.mframework.unitycommsystem",
   "version": "0.1.0",
-  "displayName": "MFramework.CommSystem",
+  "displayName": "MFramework.UnityCommSystem",
   "description": "用于Unity开发的网络通信包",
   "unity": "2023.3",
   "author": {
