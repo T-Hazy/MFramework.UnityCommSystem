@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocketPro.SocketIo</name>
+    </assembly>
+    <members>
+        <member name="M:TouchSocket.Sockets.InternalClientCollection`1.GetIds">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Sockets.InternalClientCollection`1.TryAdd(`0)">
+            <summary>
+            添加客户端
+            </summary>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Sockets.InternalClientCollection`1.TryGetClient(System.String,`0@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Sockets.InternalClientCollection`1.TryRemoveClient(System.String,`0@)">
+            <summary>
+            移除对应客户端
+            </summary>
+            <param name="id"></param>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

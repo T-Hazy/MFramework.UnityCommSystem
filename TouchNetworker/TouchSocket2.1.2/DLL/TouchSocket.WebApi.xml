@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocket.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.WebApi.EnableCorsAttribute">
+            <summary>
+            适用于WebApi的跨域特性
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.EnableCorsAttribute.#ctor(System.String)">
+            <summary>
+            适用于WebApi的跨域特性
+            </summary>
+            <param name="policyName">跨域策略名称</param>
+        </member>
+        <member name="P:TouchSocket.WebApi.EnableCorsAttribute.PolicyName">
+            <summary>
+            跨域策略名称
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.EnableCorsAttribute.ExecutedAsync(TouchSocket.Rpc.ICallContext,System.Object[],TouchSocket.Rpc.InvokeResult,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.WebApi.RouterAttribute">
+            <summary>
+            表示WebApi路由。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.RouterAttribute.#ctor(System.String)">
+            <summary>
+            表示WebApi路由。
+            该模板在用于方法时，会覆盖类的使用。
+            模板必须由“/”开始，如果没有设置，会自动补齐。
+            模板不支持参数约定，仅支持方法路由。
+            <para>模板有以下约定：
+            <list type="number">
+            <item>不区分大小写</item>
+            <item>以“[Api]”表示当前类名，如果不包含此字段，则意味着会使用绝对设置</item>
+            <item>以“[Action]”表示当前方法名，如果不包含此字段，则意味着会使用绝对设置</item>
+            </list>
+            </para>
+            </summary>
+            <param name="routeTemple"></param>
+        </member>
+        <member name="P:TouchSocket.WebApi.RouterAttribute.RouteTemple">
+            <summary>
+            路由模板。
+            </summary>
+        </member>
+        <member name="T:TouchSocket.WebApi.WebApiAttribute">
+            <summary>
+            该自定义属性用于标记 Web API 方法。
+            继承自 <see cref="T:TouchSocket.Rpc.RpcAttribute"/>，用于实现远程过程调用的功能。
+            通过该属性，可以更便捷地将方法暴露为 Web API 服务。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiAttribute.#ctor(TouchSocket.WebApi.HttpMethodType)">
+            <summary>
+            构造函数，用于初始化WebApiAttribute对象并设置HTTP方法类型。
+            </summary>
+            <param name="method">指定HTTP请求的方法类型，如GET、POST等。</param>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiAttribute.#ctor">
+            <summary>
+            使用Get函数的WebApi特性
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.WebApiAttribute.Method">
+            <summary>
+            请求函数类型。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiAttribute.GetGenericConstraintTypes">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiAttribute.GetInvokeKey(TouchSocket.Rpc.RpcMethod)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiAttribute.GetRouteUrls(TouchSocket.Rpc.RpcMethod)">
+            <summary>
+            获取路由路径。
+            <para>路由路径的第一个值会被当做调用值。</para>
+            </summary>
+            <param name="rpcMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.WebApi.ActionResult">
+            <summary>
+            结果状态
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.ActionResult.Status">
+            <summary>
+            状态类型
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.ActionResult.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.WebApiCallContext.HttpContext">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.WebApi.WebApiClient">
+            <summary>
+            WebApi客户端
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiClient.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.WebApiClient.Converter">
+            <summary>
+            字符串转化器
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiClient.ConnectAsync(System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiClient.InvokeAsync(System.String,System.Type,TouchSocket.Rpc.IInvokeOption,System.Object[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.WebApi.HttpMethodType">
+            <summary>
+            请求函数类型
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.HttpMethodType.GET">
+            <summary>
+            以GET方式。支持调用上下文。
+            <para>以该方式时，所有的参数类型必须是基础类型。所有的参数来源均来自url参数。</para>
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.HttpMethodType.POST">
+            <summary>
+            以Post方式。支持调用上下文。
+            <para>以该方式时，可以应对以下情况：</para>
+            <list type="bullet">
+            <item>仅有一个参数时，该参数可以为任意类型，且参数来源为Body</item>
+            <item>当有多个参数时，最后一个参数可以为任意类型，且参数来源为Body，其余参数均必须是基础类型，且来自url参数。</item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:TouchSocket.WebApi.WebApiEventArgs">
+            <summary>
+            提供Web API事件参数的类
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiEventArgs.#ctor(TouchSocket.Http.HttpRequest,TouchSocket.Http.HttpResponse)">
+            <summary>
+            初始化WebApiEventArgs类的新实例
+            </summary>
+            <param name="request">表示HTTP请求的对象</param>
+            <param name="response">表示HTTP响应的对象</param>
+        </member>
+        <member name="P:TouchSocket.WebApi.WebApiEventArgs.IsHttpMessage">
+            <summary>
+            获取或设置一个值，该值指示是否以HttpMessage方式请求
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.WebApiEventArgs.Request">
+            <summary>
+            获取HTTP请求对象
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.WebApiEventArgs.Response">
+            <summary>
+            获取HTTP响应对象
+            </summary>
+        </member>
+        <member name="T:TouchSocket.WebApi.IHttpCallContext">
+            <summary>
+            IHttpCallContext
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.IHttpCallContext.HttpContext">
+            <summary>
+            Http上下文
+            </summary>
+        </member>
+        <member name="T:TouchSocket.WebApi.IWebApiCallContext">
+            <summary>
+            定义了一个用于Web API调用上下文的接口，继承自IHttpCallContext。
+            </summary>
+            <remarks>
+            此接口旨在为Web API调用提供特定的上下文信息，以便在这样的调用中传递和处理额外的数据。
+            实现这个接口的类应该提供特定于Web API环境的方法和属性。
+            </remarks>
+        </member>
+        <member name="T:TouchSocket.WebApi.IWebApiClient">
+            <summary>
+            定义了一个用于Web API客户端操作的公共接口，该接口继承自多个基接口，以支持丰富的网络和会话功能
+            </summary>
+            <remarks>
+            此接口结合了IWebApiClientBase, IHttpSession, ISetupConfigObject, IOnlineClient和ITcpConnectableClient的功能，
+            提供了一种综合的方法来实现Web API的客户端操作。实现这个接口的类将能够发起Web API请求，
+            管理会话状态，配置客户端设置，处理在线状态，并支持TCP连接管理。
+            </remarks>
+        </member>
+        <member name="T:TouchSocket.WebApi.IWebApiClientBase">
+            <summary>
+            定义了一个基础的Web API客户端接口，该接口扩展了IRpcClient。
+            </summary>
+            <remarks>
+            此接口的目的是为Web API客户端提供一个统一的接口定义，任何实现该接口的类都继承了RPC客户端的基本功能，
+            并且可能提供了Web API特定的功能和方法。
+            </remarks>
+        </member>
+        <member name="T:TouchSocket.WebApi.IWebApiRequestPlugin">
+            <summary>
+            定义一个用于处理Web API请求的插件接口
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.IWebApiRequestPlugin.OnWebApiRequest(TouchSocket.WebApi.IWebApiClientBase,TouchSocket.WebApi.WebApiEventArgs)">
+            <summary>
+            在请求之前
+            </summary>
+            <param name="client">Web API客户端基类实例，用于发送请求</param>
+            <param name="e">包含请求相关信息的事件参数</param>
+            <returns>一个任务对象，用于异步操作</returns>
+        </member>
+        <member name="T:TouchSocket.WebApi.IWebApiResponsePlugin">
+            <summary>
+            定义一个接口，用于处理Web API响应后的操作
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.IWebApiResponsePlugin.OnWebApiResponse(TouchSocket.WebApi.IWebApiClientBase,TouchSocket.WebApi.WebApiEventArgs)">
+            <summary>
+            在收到响应之后执行的操作
+            此方法允许在Web API客户端收到响应后对其进行自定义处理
+            </summary>
+            <param name="client">发出请求的Web API客户端实例</param>
+            <param name="e">包含响应信息的事件参数</param>
+            <returns>一个任务对象，代表异步操作</returns>
+        </member>
+        <member name="T:TouchSocket.WebApi.WebApiParserPlugin">
+            <summary>
+            WebApi解析器
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiParserPlugin.#ctor(TouchSocket.Rpc.IRpcServerProvider,TouchSocket.Core.IResolver)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.WebApiParserPlugin.Converter">
+            <summary>
+            转化器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.WebApiParserPlugin.GetRouteMap">
+            <summary>
+            获取Get函数路由映射图
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.WebApiParserPlugin.PostRouteMap">
+            <summary>
+            获取Post函数路由映射图
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiParserPlugin.ConfigureConverter(System.Action{TouchSocket.WebApi.WebApiSerializerConverter})">
+            <summary>
+            配置转换器。可以实现json序列化或者xml序列化。
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiParserPlugin.Loaded(TouchSocket.Core.IPluginManager)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.WebApi.WebApiRealityProxy`3">
+            <summary>
+            WebApiRealityProxy
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TClient"></typeparam>
+            <typeparam name="TAttribute"></typeparam>
+        </member>
+        <member name="T:TouchSocket.WebApi.WebApiRealityProxy`2">
+            <summary>
+            WebApiRealityProxy
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TClient"></typeparam>
+        </member>
+        <member name="T:TouchSocket.WebApi.WebApiRealityProxy`1">
+            <summary>
+            WebApiRealityProxy
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:TouchSocket.WebApi.WebApiSerializerConverter">
+            <summary>
+            适用于WebApi的序列化器
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiSerializerConverter.Serialize(TouchSocket.Http.HttpContext,System.Object@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiSerializerConverter.AddJsonSerializerFormatter(Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            添加Json序列化器
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:TouchSocket.WebApi.WebApiSerializerConverter.AddXmlSerializerFormatter">
+            <summary>
+            添加Xml序列化器
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Sockets.WebApiConfigExtensions">
+            <summary>
+            WebApiConfigExtensions
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Core.WebApiPluginManagerExtension">
+            <summary>
+            WebApiPluginManagerExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Core.WebApiPluginManagerExtension.UseWebApi(TouchSocket.Core.IPluginManager)">
+            <summary>
+            使用WebApi的插件。仅服务器可用。
+            </summary>
+            <param name="pluginManager"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Resources.TouchSocketWebApiResource">
+            <summary>
+            TouchSocketWebApi资源枚举
+            </summary>
+        </member>
+    </members>
+</doc>

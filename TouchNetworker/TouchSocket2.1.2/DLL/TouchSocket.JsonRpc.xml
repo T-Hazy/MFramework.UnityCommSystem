@@ -1,0 +1,656 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocket.JsonRpc</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcAttribute">
+            <summary>
+            适用于JsonRpc的标记
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcAttribute.#ctor(System.Boolean)">
+            <summary>
+             适用于JsonRpc的标记.
+             <para>是否仅以函数名调用，当为True是，调用时仅需要传入方法名即可。</para>
+            </summary>
+            <param name="methodInvoke"></param>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcAttribute.#ctor">
+            <summary>
+            适用于JsonRpc的标记
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcAttribute.#ctor(System.String)">
+            <summary>
+            适用于JsonRpc的标记.
+            </summary>
+            <param name="invokenKey"></param>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcAttribute.GetGenericConstraintTypes">
+            <inheritdoc/>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.HttpJsonRpcCallContext">
+            <summary>
+            HttpJsonRpcCallContext
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.HttpJsonRpcCallContext.#ctor(System.Object,System.String,TouchSocket.Http.HttpContext)">
+            <summary>
+            HttpJsonRpcCallContext
+            </summary>
+            <param name="caller"></param>
+            <param name="jsonString"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.HttpJsonRpcCallContext.HttpContext">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcCallContextBase">
+            <summary>
+            JsonRpc调用上下文
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcCallContextBase.#ctor(System.Object,System.String)">
+            <summary>
+             JsonRpc调用上下文
+            </summary>
+            <param name="caller"></param>
+            <param name="jsonString"></param>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcCallContextBase.JsonRpcContext">
+            <summary>
+            JsonRpc上下文
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcCallContextBase.JsonString">
+            <summary>
+            Json字符串
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcError">
+            <summary>
+            JsonRpcError
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcError.Code">
+            <summary>
+            code
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcError.Message">
+            <summary>
+            message
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcErrorResponse">
+            <summary>
+            JsonRpcErrorResponse
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcErrorResponse.Error">
+            <summary>
+            error
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcRequest">
+            <summary>
+            JsonRpcRequest
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcRequest.Jsonrpc">
+            <summary>
+            jsonrpc
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcRequest.Method">
+            <summary>
+            method
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcRequest.Params">
+            <summary>
+            @params
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcRequest.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcRequestContext">
+            <summary>
+            JsonRpcRequestContext
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcRequestContext.Parameters">
+            <summary>
+            parameters
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcResponseBase">
+            <summary>
+            JsonRpcResponseBase
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcResponseBase.Jsonrpc">
+            <summary>
+            jsonrpc
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcResponseBase.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcResponseContext">
+            <summary>
+            JsonRpc响应器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcResponseContext.Result">
+            <summary>
+            result
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcResponseContext.Error">
+            <summary>
+            error
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcSuccessResponse">
+            <summary>
+            JsonRpcSuccessResponse
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcSuccessResponse.Result">
+            <summary>
+            result
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcUtility">
+            <summary>
+            JsonRpcUtility
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcUtility.IsJsonRpcRequest(System.String)">
+            <summary>
+            是否属于JsonRpc请求
+            </summary>
+            <param name="jsonString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcUtility.ToJsonRpcWaitResult(System.String)">
+            <summary>
+            ToJsonRpcWaitResult
+            </summary>
+            <param name="jsonString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcUtility.ToJsonRpcRequestContext(System.String)">
+            <summary>
+            ToJsonRpcRequestContext
+            </summary>
+            <param name="jsonString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcUtility.ToJsonRpcResponseString(TouchSocket.JsonRpc.JsonRpcResponseBase)">
+            <summary>
+            ToJsonRpcResponseString
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcUtility.ResultParseToType(System.Object,System.Type)">
+            <summary>
+            ResultParseToType
+            </summary>
+            <param name="result"></param>
+            <param name="returnType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcUtility.BuildRequestContext(TouchSocket.Core.IResolver,TouchSocket.Rpc.ActionMap,TouchSocket.JsonRpc.JsonRpcCallContextBase@)">
+            <summary>
+            BuildRequestContext
+            </summary>
+            <param name="resolver"></param>
+            <param name="actionMap"></param>
+            <param name="callContext"></param>
+            <exception cref="T:TouchSocket.Rpc.RpcException"></exception>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcUtility.GetJsonRpcError(TouchSocket.Rpc.InvokeResult)">
+            <summary>
+            GetJsonRpcError
+            </summary>
+            <param name="invokeResult"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcWaitResult">
+            <summary>
+            JsonRpcWaitResult
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcWaitResult.Result">
+            <summary>
+            Result
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcWaitResult.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcWaitResult.Message">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcWaitResult.Sign">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcWaitResult.Status">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.TcpJsonRpcCallContext">
+            <summary>
+            TcpJsonRpcCallContext
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.TcpJsonRpcCallContext.#ctor(System.Object,System.String)">
+            <summary>
+            TcpJsonRpcCallContext
+            </summary>
+            <param name="caller"></param>
+            <param name="jsonString"></param>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.HttpJsonRpcClient">
+            <summary>
+            基于Http协议的JsonRpc客户端
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.HttpJsonRpcClient.ConnectAsync(System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.HttpJsonRpcClient.InvokeAsync(System.String,System.Type,TouchSocket.Rpc.IInvokeOption,System.Object[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcActionClientBase">
+            <summary>
+            JsonRpcActionClientBase
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcActionClientBase.WaitHandle">
+            <summary>
+            WaitHandle
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcActionClientBase.InvokeAsync(System.Type,System.String,TouchSocket.Rpc.IInvokeOption,System.Object[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcActionClientBase.SendJsonStringAsync(System.String)">
+            <summary>
+            发送Json字符串
+            </summary>
+            <param name="jsonString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcActionClientBase.InputResponseString(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcActionClientBase.InvokeAsync(System.String,System.Type,TouchSocket.Rpc.IInvokeOption,System.Object[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.TcpJsonRpcClient">
+            <summary>
+            基于Tcp协议的TcpJsonRpc客户端
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.TcpJsonRpcClient.ActionMap">
+            <summary>
+            JsonRpc的调用键。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.TcpJsonRpcClient.ConnectAsync(System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.TcpJsonRpcClient.InvokeAsync(System.String,System.Type,TouchSocket.Rpc.IInvokeOption,System.Object[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.TcpJsonRpcClient.LoadConfig(TouchSocket.Core.TouchSocketConfig)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.TcpJsonRpcClient.OnTcpReceived(TouchSocket.Sockets.ReceivedDataEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.WebSocketJsonRpcClient">
+            <summary>
+            基于WebSocket协议的JsonRpc客户端。
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.WebSocketJsonRpcClient.ActionMap">
+            <summary>
+            JsonRpc的调用键。
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.WebSocketJsonRpcClient.WaitHandle">
+            <summary>
+            WaitHandle
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.WebSocketJsonRpcClient.Online">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.WebSocketJsonRpcClient.LoadConfig(TouchSocket.Core.TouchSocketConfig)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.WebSocketJsonRpcClient.OnReceived(System.Net.WebSockets.WebSocketReceiveResult,TouchSocket.Core.ByteBlock)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.WebSocketJsonRpcClient.OnDisconnected(TouchSocket.Sockets.ClosedEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.WebSocketJsonRpcClient.InvokeAsync(System.String,System.Type,TouchSocket.Rpc.IInvokeOption,System.Object[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcClientExtension">
+            <summary>
+            JsonRpcClientExtension
+            </summary>
+        </member>
+        <member name="F:TouchSocket.JsonRpc.JsonRpcClientExtension.IsJsonRpcProperty">
+            <summary>
+            标识是否为JsonRpc
+            </summary>
+        </member>
+        <member name="F:TouchSocket.JsonRpc.JsonRpcClientExtension.JsonRpcActionClientProperty">
+            <summary>
+            IJsonRpcActionClient
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcClientExtension.GetIsJsonRpc(TouchSocket.Core.IDependencyObject)">
+            <summary>
+            获取<see cref="F:TouchSocket.JsonRpc.JsonRpcClientExtension.IsJsonRpcProperty"/>
+            </summary>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcClientExtension.SetIsJsonRpc(TouchSocket.Core.IDependencyObject,System.Boolean)">
+            <summary>
+            设置<see cref="F:TouchSocket.JsonRpc.JsonRpcClientExtension.IsJsonRpcProperty"/>
+            </summary>
+            <param name="client"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcClientExtension.GetJsonRpcActionClient(TouchSocket.Sockets.ISessionClient)">
+            <summary>
+            获取基于Tcp协议或者WebSocket协议的双工JsonRpc端
+            </summary>
+            <param name="sessionClient"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.IHttpJsonRpcCallContext">
+            <summary>
+            IHttpJsonRpcCallContext
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.IHttpJsonRpcClient">
+            <summary>
+            IHttpJsonRpcClient
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.IHttpJsonRpcClientSlim">
+            <summary>
+            IHttpJsonRpcClientSlim
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.IJsonRpcActionClient">
+            <summary>
+            IJsonRpcClientBase
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.IJsonRpcActionClient.WaitHandle">
+            <summary>
+            WaitHandle
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.IJsonRpcActionClient.InputResponseString(System.String)">
+            <summary>
+            收到JsonRpc的响应数据
+            </summary>
+            <param name="jsonString"></param>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.IJsonRpcCallContext">
+            <summary>
+            IJsonRpcCallContext
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.IJsonRpcCallContext.JsonString">
+            <summary>
+            Json字符串
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.IJsonRpcCallContext.JsonRpcContext">
+            <summary>
+            JsonRpc数据包
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.IJsonRpcClient">
+            <summary>
+            IJsonRpcClient
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.IJsonRpcRequestInfo">
+            <summary>
+            当使用自定义适配器时，则可以自定义数据来源。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.IJsonRpcRequestInfo.GetJsonRpcString">
+            <summary>
+            获取JsonRpc数据源。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.ITcpJsonRpcCallContext">
+            <summary>
+            ITcpJsonRpcCallContext
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.ITcpJsonRpcClient">
+            <summary>
+            基于Tcp协议的JsonRpc客户端。
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.IWebSocketJsonRpcClient">
+            <summary>
+            IWebSocketJsonRpcClient
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.HttpJsonRpcParserPlugin">
+            <summary>
+            HttpJsonRpcParserPlugin
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.HttpJsonRpcParserPlugin.#ctor(TouchSocket.Rpc.IRpcServerProvider,TouchSocket.Core.IResolver)">
+            <summary>
+            构造函数，用于初始化 <see cref="T:TouchSocket.JsonRpc.HttpJsonRpcParserPlugin"/> 类的新实例。
+            </summary>
+            <param name="rpcServerProvider">IRpcServerProvider 类型的参数，提供 RPC 服务器服务。</param>
+            <param name="resolver">IResolver 接口类型的参数，用于解析依赖项。</param>
+            <remarks>
+            该构造函数调用基类的构造函数，传递 <paramref name="rpcServerProvider"/> 和 <paramref name="resolver"/> 参数。
+            这对于确保基类能够访问 RPC 服务器提供者和依赖项解析器至关重要。
+            </remarks>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.HttpJsonRpcParserPlugin.Loaded(TouchSocket.Core.IPluginManager)">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.HttpJsonRpcParserPlugin.JsonRpcUrl">
+            <summary>
+            当挂载在<see cref="T:TouchSocket.Http.HttpService"/>时，匹配Url然后响应。当设置为null或空时，会全部响应。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.HttpJsonRpcParserPlugin.SetJsonRpcUrl(System.String)">
+            <summary>
+            设置JSON-RPC URL的匹配规则。
+            当挂载在<see cref="T:TouchSocket.Http.HttpService"/>时，根据指定的URL进行匹配并响应请求。
+            如果设置为null或空，将对所有请求进行响应。
+            </summary>
+            <param name="jsonRpcUrl">要匹配的JSON-RPC URL。</param>
+            <returns>返回当前的<see cref="T:TouchSocket.JsonRpc.HttpJsonRpcParserPlugin"/>实例，支持链式调用。</returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.HttpJsonRpcParserPlugin.ResponseAsync(TouchSocket.JsonRpc.JsonRpcCallContextBase,System.Object,TouchSocket.JsonRpc.JsonRpcError)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcParserPluginBase">
+            <summary>
+            JsonRpcParser解析器插件
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcParserPluginBase.#ctor(TouchSocket.Rpc.IRpcServerProvider,TouchSocket.Core.IResolver)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.JsonRpcParserPluginBase.ActionMap">
+            <summary>
+            JsonRpc的调用键。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcParserPluginBase.ResponseAsync(TouchSocket.JsonRpc.JsonRpcCallContextBase,System.Object,TouchSocket.JsonRpc.JsonRpcError)">
+            <summary>
+            处理响应结果。
+            </summary>
+            <param name="callContext"></param>
+            <param name="result"></param>
+            <param name="error"></param>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.JsonRpcParserPluginBase.ThisInvokeAsync(System.Object)">
+            <summary>
+            调用JsonRpc
+            </summary>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.TcpJsonRpcParserPlugin">
+            <summary>
+            基于Tcp协议的JsonRpc功能插件
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.TcpJsonRpcParserPlugin.#ctor(TouchSocket.Rpc.IRpcServerProvider,TouchSocket.Core.IResolver)">
+            <summary>
+            基于Tcp协议的JsonRpc功能插件
+            </summary>
+            <param name="rpcServerProvider"></param>
+            <param name="resolver"></param>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.TcpJsonRpcParserPlugin.Loaded(TouchSocket.Core.IPluginManager)">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.TcpJsonRpcParserPlugin.AutoSwitch">
+            <summary>
+            自动转换协议
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.TcpJsonRpcParserPlugin.NoSwitchProtocol">
+            <summary>
+            不需要自动转化协议。
+            <para>仅当服务器是Tcp时生效。才会解释为jsonRpc。</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.TcpJsonRpcParserPlugin.ResponseAsync(TouchSocket.JsonRpc.JsonRpcCallContextBase,System.Object,TouchSocket.JsonRpc.JsonRpcError)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.WebSocketJsonRpcParserPlugin">
+            <summary>
+            WebSocketJsonRpcParserPlugin
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.WebSocketJsonRpcParserPlugin.#ctor(TouchSocket.Rpc.IRpcServerProvider,TouchSocket.Core.IResolver)">
+            <summary>
+            WebSocketJsonRpcParserPlugin
+            </summary>
+            <param name="rpcServerProvider"></param>
+            <param name="resolver"></param>
+        </member>
+        <member name="P:TouchSocket.JsonRpc.WebSocketJsonRpcParserPlugin.AllowJsonRpc">
+            <summary>
+            经过判断是否标识当前的客户端为JsonRpc
+            </summary>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.WebSocketJsonRpcParserPlugin.SetAllowJsonRpc(System.Func{TouchSocket.Http.WebSockets.IWebSocket,TouchSocket.Http.HttpContext,System.Threading.Tasks.Task{System.Boolean}})">
+            <summary>
+            经过判断是否标识当前的客户端为JsonRpc
+            </summary>
+            <param name="allowJsonRpc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.WebSocketJsonRpcParserPlugin.SetAllowJsonRpc(System.Func{TouchSocket.Http.WebSockets.IWebSocket,TouchSocket.Http.HttpContext,System.Boolean})">
+            <summary>
+            经过判断是否标识当前的客户端为JsonRpc
+            </summary>
+            <param name="allowJsonRpc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.WebSocketJsonRpcParserPlugin.Loaded(TouchSocket.Core.IPluginManager)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.JsonRpc.WebSocketJsonRpcParserPlugin.ResponseAsync(TouchSocket.JsonRpc.JsonRpcCallContextBase,System.Object,TouchSocket.JsonRpc.JsonRpcError)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcRealityProxy`3">
+            <summary>
+            JsonRpcRealityProxy
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TClient"></typeparam>
+            <typeparam name="TAttribute"></typeparam>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcRealityProxy`2">
+            <summary>
+            JsonRpcRealityProxy
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TClient"></typeparam>
+        </member>
+        <member name="T:TouchSocket.JsonRpc.JsonRpcRealityProxy`1">
+            <summary>
+            JsonRpcRealityProxy
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:TouchSocket.Sockets.JsonRpcConfigExtension">
+            <summary>
+            JsonRpcConfigExtension
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Core.JsonRpcPluginManagerExtension">
+            <summary>
+            JsonRpcPluginManagerExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Core.JsonRpcPluginManagerExtension.UseTcpJsonRpc(TouchSocket.Core.IPluginManager)">
+            <summary>
+            使用基于Tcp协议的JsonRpc的插件。
+            </summary>
+            <param name="pluginManager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Core.JsonRpcPluginManagerExtension.UseHttpJsonRpc(TouchSocket.Core.IPluginManager)">
+            <summary>
+            使用基于Http协议的JsonRpc的插件。仅服务器有用。
+            </summary>
+            <param name="pluginManager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Core.JsonRpcPluginManagerExtension.UseWebSocketJsonRpc(TouchSocket.Core.IPluginManager)">
+            <summary>
+            使用基于WebSocket协议的JsonRpc的插件。
+            </summary>
+            <param name="pluginManager"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Resources.TouchSocketJsonRpcResource">
+            <summary>
+            TouchSocketJsonRpc资源枚举
+            </summary>
+        </member>
+    </members>
+</doc>

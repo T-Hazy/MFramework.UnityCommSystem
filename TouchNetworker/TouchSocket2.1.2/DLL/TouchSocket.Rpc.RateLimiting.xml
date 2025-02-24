@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocket.Rpc.RateLimiting</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.Rpc.RateLimiting.EnableRateLimitingAttribute">
+            <summary>
+            使用限流策略
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Rpc.RateLimiting.EnableRateLimitingAttribute.PolicyName">
+            <summary>
+            策略名称
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.EnableRateLimitingAttribute.#ctor(System.String)">
+            <summary>
+            构造函数：初始化EnableRateLimitingAttribute对象
+            </summary>
+            <param name="policyName">限流策略的名称</param>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.EnableRateLimitingAttribute.ExecutingAsync(TouchSocket.Rpc.ICallContext,System.Object[],TouchSocket.Rpc.InvokeResult)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.EnableRateLimitingAttribute.ExecutedAsync(TouchSocket.Rpc.ICallContext,System.Object[],TouchSocket.Rpc.InvokeResult,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Rpc.RateLimiting.RateLimiterOptions">
+            <summary>
+            限速器配置类
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Rpc.RateLimiting.RateLimiterOptions.RateLimiterPolicies">
+            <summary>
+            限速策略字典，用于存储不同的限速策略
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimiterOptions.AddPolicy(System.String,TouchSocket.Rpc.RateLimiting.IRateLimiterPolicy)">
+            <summary>
+            添加限速策略方法
+            </summary>
+            <param name="policyName">限速策略名称，用作策略的唯一标识</param>
+            <param name="rateLimiterPolicy">具体的限速策略实例</param>
+            <returns>当前的RateLimiterOptions实例，支持链式调用</returns>
+        </member>
+        <member name="T:TouchSocket.Rpc.RateLimiting.RateLimiterOptionsExtensions">
+            <summary>
+            定义一个静态内部类，提供针对RateLimiter配置选项的扩展方法
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimiterOptionsExtensions.AddConcurrencyLimiter(TouchSocket.Rpc.RateLimiting.RateLimiterOptions,System.String,System.Action{System.Threading.RateLimiting.ConcurrencyLimiterOptions})">
+            <summary>
+            添加并发限流策略
+            </summary>
+            <param name="options">原有的RateLimiterOptions实例</param>
+            <param name="policyName">限流策略的名称</param>
+            <param name="configureOptions">用于配置ConcurrencyLimiterOptions的委托</param>
+            <returns>返回修改后的RateLimiterOptions实例</returns>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowLimiter(TouchSocket.Rpc.RateLimiting.RateLimiterOptions,System.String,System.Action{System.Threading.RateLimiting.FixedWindowRateLimiterOptions})">
+            <summary>
+            添加固定窗口限流策略
+            </summary>
+            <param name="options">限流器选项配置</param>
+            <param name="policyName">策略名称</param>
+            <param name="configureOptions">配置固定窗口限流策略的委托</param>
+            <returns>返回更新后的限流器选项配置</returns>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimiterOptionsExtensions.AddSlidingWindowLimiter(TouchSocket.Rpc.RateLimiting.RateLimiterOptions,System.String,System.Action{System.Threading.RateLimiting.SlidingWindowRateLimiterOptions})">
+            <summary>
+            添加滑动窗口限流策略
+            </summary>
+            <param name="options">RateLimiterOptions对象，用于配置限流策略</param>
+            <param name="policyName">限流策略的名称</param>
+            <param name="configureOptions">配置滑动窗口限流策略的委托</param>
+            <returns>返回更新后的RateLimiterOptions对象</returns>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimiterOptionsExtensions.AddTokenBucketLimiter(TouchSocket.Rpc.RateLimiting.RateLimiterOptions,System.String,System.Action{System.Threading.RateLimiting.TokenBucketRateLimiterOptions})">
+            <summary>
+            添加令牌桶限流策略
+            </summary>
+            <param name="options">限流器选项配置</param>
+            <param name="policyName">策略名称</param>
+            <param name="configureOptions">配置令牌桶选项的委托</param>
+            <returns>返回更新后的限流器选项配置</returns>
+        </member>
+        <member name="T:TouchSocket.Rpc.RateLimiting.RateLimitingContainerExtension">
+            <summary>
+            提供扩展方法以方便注册限流策略。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimitingContainerExtension.AddRateLimiter(TouchSocket.Core.IRegistrator,System.Action{TouchSocket.Rpc.RateLimiting.RateLimiterOptions})">
+            <summary>
+            向注册器中注册限流策略。
+            </summary>
+            <param name="registrator">需要注册限流策略的注册器。</param>
+            <param name="action">用于配置限流策略选项的委托。</param>
+            <returns>返回配置了限流策略的注册器。</returns>
+        </member>
+        <member name="T:TouchSocket.Rpc.RateLimiting.IRateLimiterPolicy">
+            <summary>
+            定义了一个接口，用于根据上下文信息获取限流器实例
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.IRateLimiterPolicy.GetRateLimiter(TouchSocket.Rpc.ICallContext)">
+            <summary>
+            根据给定的调用上下文获取相应的限流器实例
+            </summary>
+            <param name="callContext">调用上下文，包含关于请求的信息</param>
+            <returns>返回一个限流器实例</returns>
+        </member>
+        <member name="T:TouchSocket.Rpc.RateLimiting.RateLimiterPolicy`1">
+            <summary>
+            RateLimiter策略的抽象基类，用于定义针对特定分区键的限流策略。
+            </summary>
+            <typeparam name="TPartitionKey">分区键的类型，用于区分不同的数据分区。</typeparam>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimiterPolicy`1.#ctor">
+            <summary>
+            初始化RateLimiterPolicy类的实例。
+            </summary>
+            <remarks>
+            该构造函数主要负责初始化一个值计数器（ValueCounter），
+            并设置其周期（Period）和周期事件处理方法（OnPeriod）。
+            值计数器用于跟踪和控制请求的速率，以防止过载或滥用。
+            </remarks>
+        </member>
+        <member name="P:TouchSocket.Rpc.RateLimiting.RateLimiterPolicy`1.MaxLifetime">
+            <summary>
+            最大生命周期限制。默认：60分钟。
+            <para>
+            当一个限流器在设定时间内没被使用时，会被移除销毁。
+            </para>
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimiterPolicy`1.GetRateLimiter(TouchSocket.Rpc.ICallContext)">
+            <summary>
+            获取限流器
+            </summary>
+            <param name="callContext">调用上下文对象，用于确定限流器的分区键</param>
+            <returns>返回一个限流器实例</returns>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimiterPolicy`1.GetPartitionKey(TouchSocket.Rpc.ICallContext)">
+            <summary>
+            获取分区键
+            </summary>
+            <param name="callContext">调用上下文对象，可能包含获取分区键所需的信息</param>
+            <returns>返回一个泛型分区键，具体类型由子类实现决定</returns>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.RateLimiterPolicy`1.NewRateLimiter(`0)">
+            <summary>
+            创建一个新的限流器
+            </summary>
+            <param name="partitionKey">分区键，用于区分不同的限流对象</param>
+            <returns>返回一个新的限流器实例</returns>
+        </member>
+        <member name="T:TouchSocket.Rpc.RateLimiting.IRateLimitService">
+            <summary>
+            Rpc速率限定服务接口
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Rpc.RateLimiting.IRateLimitService.GetRateLimiterPolicy(System.String)">
+            <summary>
+            获取限流策略
+            </summary>
+            <param name="policyName">限流策略名称</param>
+            <returns>返回对应的限流策略对象</returns>
+        </member>
+    </members>
+</doc>

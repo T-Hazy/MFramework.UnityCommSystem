@@ -1,0 +1,595 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocket.SerialPorts</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.SerialPorts.SerialOperationResult">
+            <summary>
+            串行操作结果的结构体。
+            用于封装一次串行操作（如读取）的结果，包括传输的字节数和操作类型。
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialOperationResult.BytesTransferred">
+            <summary>
+            已传输的字节数。
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialOperationResult.EventType">
+            <summary>
+            串行数据事件类型。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialOperationResult.#ctor(System.Int32,System.IO.Ports.SerialData)">
+            <summary>
+            初始化<see cref="T:TouchSocket.SerialPorts.SerialOperationResult"/>结构体的实例。
+            </summary>
+            <param name="bytesToRead">要读取的字节数。</param>
+            <param name="eventType">串行数据事件类型。</param>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.SerialPortOption">
+            <summary>
+            串口配置
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortOption.BaudRate">
+            <summary>
+            波特率
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortOption.DataBits">
+            <summary>
+            数据位
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortOption.Parity">
+            <summary>
+            校验位
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortOption.PortName">
+            <summary>
+            COM
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortOption.StopBits">
+            <summary>
+            停止位
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortOption.Handshake">
+            <inheritdoc cref = "P:System.IO.Ports.SerialPort.Handshake" />
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortOption.DtrEnable">
+            <inheritdoc cref = "P:System.IO.Ports.SerialPort.DtrEnable" />
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortOption.RtsEnable">
+            <inheritdoc cref = "P:System.IO.Ports.SerialPort.RtsEnable" />
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortOption.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.SerialPortUtility">
+            <summary>
+            SerialPortUtility
+            </summary>
+        </member>
+        <member name="F:TouchSocket.SerialPorts.SerialPortUtility.SerialPort">
+            <summary>
+            SerialPort
+            </summary>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.SerialCore">
+            <summary>
+            Serial核心
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialCore.#ctor(System.String,System.Int32,System.IO.Ports.Parity,System.Int32,System.IO.Ports.StopBits)">
+            <summary>
+            Serial核心
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialCore.Finalize">
+            <summary>
+            析构函数
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialCore.MaxBufferSize">
+            <summary>
+            最大缓存尺寸
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialCore.MinBufferSize">
+            <summary>
+            最小缓存尺寸
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialCore.ReceiveBufferSize">
+            <summary>
+            接收缓存池,运行时的值会根据流速自动调整
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialCore.ReceiveCounter">
+            <summary>
+            接收计数器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialCore.SendBufferSize">
+            <summary>
+            发送缓存池,运行时的值会根据流速自动调整
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialCore.SendCounter">
+            <summary>
+            发送计数器
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialCore.Send(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            发送数据。
+            <para>
+            内部会根据是否启用Ssl，进行直接发送，还是Ssl发送。
+            </para>
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="length"></param>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.SerialPortClient">
+            <inheritdoc cref="T:TouchSocket.SerialPorts.SerialPortClientBase"/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClient.MainSerialPort">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClient.Closed">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClient.Closing">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClient.Connected">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClient.Connecting">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClient.Received">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.OnSerialClosed(TouchSocket.Sockets.ClosedEventArgs)">
+            <summary>
+            断开连接。在客户端未设置连接状态时，不会触发
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.OnSerialClosing(TouchSocket.Sockets.ClosingEventArgs)">
+            <summary>
+            即将断开连接(仅主动断开时有效)。
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.OnSerialConnected(TouchSocket.Sockets.ConnectedEventArgs)">
+            <summary>
+            已经建立连接
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.OnSerialConnecting(TouchSocket.Sockets.ConnectingEventArgs)">
+            <summary>
+            准备连接的时候，此时并未建立连接
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.OnSerialReceived(TouchSocket.Sockets.ReceivedDataEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.ClearReceiver">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.CreateReceiver">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.SendAsync(System.ReadOnlyMemory{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.SendAsync(TouchSocket.Core.IRequestInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClient.SendAsync(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.SerialPortClientBase">
+            <summary>
+            串口客户端基类
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.#ctor">
+            <summary>
+            串口客户端基类
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.OnSerialClosed(TouchSocket.Sockets.ClosedEventArgs)">
+            <summary>
+            断开连接。在客户端未设置连接状态时，不会触发
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.OnSerialClosing(TouchSocket.Sockets.ClosingEventArgs)">
+            <summary>
+            即将断开连接(仅主动断开时有效)。
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.OnSerialConnected(TouchSocket.Sockets.ConnectedEventArgs)">
+            <summary>
+            已经建立连接
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.OnSerialConnecting(TouchSocket.Sockets.ConnectingEventArgs)">
+            <summary>
+            准备连接的时候，此时并未建立连接
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.OnSerialReceived(TouchSocket.Sockets.ReceivedDataEventArgs)">
+            <summary>
+            当收到适配器处理的数据时。
+            </summary>
+            <param name="e"></param>
+            <returns>如果返回<see langword="true"/>则表示数据已被处理，且不会再向下传递。</returns>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.OnSerialReceiving(TouchSocket.Core.ByteBlock)">
+            <summary>
+            当收到原始数据时
+            </summary>
+            <param name="byteBlock">包含接收数据的字节块</param>
+            <returns>
+            如果返回<see langword="true"/>则表示数据已被处理，且不会再向下传递。
+            返回<see langword="false"/>则表示数据未被处理，可能会继续向下传递。
+            </returns>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.OnSerialSending(System.ReadOnlyMemory{System.Byte})">
+            <summary>
+            在序列化发送前调用的虚拟方法。
+            </summary>
+            <param name="memory">待发送的字节序列。</param>
+            <returns>一个表示操作结果的<see cref="T:System.Threading.Tasks.ValueTask`1"/>，始终返回 true。</returns>
+            <remarks>
+            此方法的存在是为了提供一个扩展点，允许在序列化数据发送之前进行自定义处理。
+            默认实现直接返回 true，表示默认情况下允许序列化发送继续进行。
+            </remarks>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClientBase.IsClient">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClientBase.LastReceivedTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClientBase.LastSentTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClientBase.Online">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClientBase.Protocol">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClientBase.ProtectedDataHandlingAdapter">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.SerialPortClientBase.ProtectedMainSerialPort">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.CloseAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.ConnectAsync(System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.Abort(System.Boolean,System.String)">
+            <summary>
+            中止连接方法
+            </summary>
+            <param name="manual">是否为手动断开连接</param>
+            <param name="msg">断开连接的原因</param>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.SetAdapter(TouchSocket.Core.SingleStreamDataHandlingAdapter)">
+            <summary>
+            设置数据处理适配器。
+            </summary>
+            <param name="adapter">要设置的适配器实例。</param>
+            <exception cref="T:System.ArgumentNullException">如果提供的适配器实例为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.ProtectedClearReceiver">
+            <summary>
+            清除接收器对象
+            </summary>
+            <remarks>
+            将内部接收器对象置为null，以释放资源或重置状态
+            </remarks>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.ProtectedCreateReceiver(TouchSocket.Sockets.IReceiverClient{TouchSocket.Sockets.IReceiverResult})">
+            <summary>
+            创建或获取一个接收器对象。
+            </summary>
+            <param name="receiverObject">接收器客户端对象，用于接收操作结果。</param>
+            <returns>返回一个实现了IReceiver&lt;IReceiverResult&gt;接口的接收器对象。</returns>
+            <remarks>
+            这个方法使用了空条件运算符（??=）来实现懒加载，即只有当m_receiver为null时才会创建一个新的InternalReceiver对象。
+            这样做可以提高性能，因为无需频繁地创建接收器实例。
+            </remarks>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.ProtectedDefaultSendAsync(System.ReadOnlyMemory{System.Byte})">
+            <summary>
+            异步发送数据，保护方法。
+            </summary>
+            <param name="memory">待发送的字节数据内存。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.ProtectedSendAsync(System.ReadOnlyMemory{System.Byte}@)">
+            <summary>
+            异步发送数据，通过适配器模式灵活处理数据发送。
+            </summary>
+            <param name="memory">待发送的只读字节内存块。</param>
+            <returns>一个异步任务，表示发送操作。</returns>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.ProtectedSendAsync(TouchSocket.Core.IRequestInfo@)">
+            <summary>
+            异步发送请求信息的受保护方法。
+            
+            此方法首先检查当前对象是否能够发送请求信息，如果不能，则抛出异常。
+            如果可以发送，它将使用数据处理适配器来异步发送输入请求。
+            </summary>
+            <param name="requestInfo">要发送的请求信息。</param>
+            <returns>返回一个任务，该任务代表异步操作的结果。</returns>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortClientBase.ProtectedSendAsync(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})">
+            <summary>
+            异步发送数据。
+            如果数据处理适配器不存在或无法拼接发送，则将所有传输字节合并到一个连续的内存块中发送。
+            如果数据处理适配器存在且支持拼接发送，则直接发送传输字节列表。
+            </summary>
+            <param name="transferBytes">要发送的字节数据列表，每个项代表一个字节片段。</param>
+            <returns>发送任务。</returns>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.SerialPortConfigExtension">
+            <summary>
+            SerialPortConfigExtension
+            </summary>
+        </member>
+        <member name="F:TouchSocket.SerialPorts.SerialPortConfigExtension.SerialDataHandlingAdapterProperty">
+            <summary>
+            设置串口适配器
+            </summary>
+        </member>
+        <member name="F:TouchSocket.SerialPorts.SerialPortConfigExtension.SerialPortOptionProperty">
+            <summary>
+            串口属性。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortConfigExtension.SetSerialDataHandlingAdapter(TouchSocket.Core.TouchSocketConfig,System.Func{TouchSocket.Core.SingleStreamDataHandlingAdapter})">
+            <summary>
+            设置(串口系)数据处理适配器。
+            </summary>
+            <param name="config"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortConfigExtension.SetSerialPortOption(TouchSocket.Core.TouchSocketConfig,TouchSocket.SerialPorts.SerialPortOption)">
+            <summary>
+            设置串口属性。
+            </summary>
+            <param name="config"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.SerialPortExtensions">
+            <summary>
+            SerialPortExtensions
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.SerialPortExtensions.TryClose(System.IO.Ports.SerialPort)">
+            <summary>
+            尝试关闭<see cref="T:System.IO.Ports.SerialPort"/>。不会抛出异常。
+            </summary>
+            <param name="serialPort"></param>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.WaitingClientExtension">
+            <summary>
+            提供扩展方法以简化创建等待客户端的代码。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.WaitingClientExtension.CreateWaitingClient(TouchSocket.SerialPorts.ISerialPortClient,TouchSocket.Sockets.WaitingOptions)">
+            <summary>
+            创建一个等待客户端，用于处理串口通信中的接收操作。
+            </summary>
+            <param name="client">发起请求的串口客户端。</param>
+            <param name="waitingOptions">等待选项，配置等待行为。</param>
+            <returns>返回一个具备特定等待行为的串口客户端实例。</returns>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.ISerialPortClient">
+            <summary>
+            串口客户端接口。
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.ISerialPortClient.Connected">
+            <summary>
+            成功打开串口
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.ISerialPortClient.Connecting">
+            <summary>
+            准备连接串口的时候
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.ISerialPortClient.Closed">
+            <summary>
+            断开连接
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.ISerialPortClient.Closing">
+            <summary>
+            即将断开连接(仅主动断开时有效)。
+            <para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.ISerialPortClient.MainSerialPort">
+            <summary>
+            主通信器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.SerialPorts.ISerialPortClient.Received">
+            <summary>
+            接收到数据
+            </summary>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.ISerialPortSession">
+            <summary>
+            定义了一个串行端口会话接口，继承自多个与客户端、插件、配置、在线状态、连接状态和关闭操作相关的接口。
+            </summary>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.ISerialClosedPlugin">
+            <summary>
+            定义一个串口关闭插件接口，扩展了通用插件接口IPlugin
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.ISerialClosedPlugin.OnSerialClosed(TouchSocket.SerialPorts.ISerialPortSession,TouchSocket.Sockets.ClosedEventArgs)">
+            <summary>
+            在会话断开时触发
+            </summary>
+            <param name="client">发生断开的串口会话对象</param>
+            <param name="e">断开事件的参数</param>
+            <returns>一个任务对象，表示异步操作</returns>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.ISerialClosingPlugin">
+            <summary>
+            定义串口关闭时的插件接口，继承自通用插件接口IPlugin
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.ISerialClosingPlugin.OnSerialClosing(TouchSocket.SerialPorts.ISerialPortSession,TouchSocket.Sockets.ClosingEventArgs)">
+            <summary>
+            即将断开连接(仅主动断开时有效)。
+            </summary>
+            <param name="client">串口会话客户端</param>
+            <param name="e">关闭事件参数</param>
+            <returns>异步任务</returns>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.ISerialConnectedPlugin">
+            <summary>
+            定义一个接口，用于表示与串行端口连接的插件
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.ISerialConnectedPlugin.OnSerialConnected(TouchSocket.SerialPorts.ISerialPortSession,TouchSocket.Sockets.ConnectedEventArgs)">
+            <summary>
+            当串行端口会话建立连接时调用的方法。
+            </summary>
+            <param name="client">建立连接的串行端口会话客户端。</param>
+            <param name="e">连接事件的参数。</param>
+            <returns>一个Task对象，表示异步操作的结果。</returns>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.ISerialConnectingPlugin">
+            <summary>
+            定义一个串行连接建立前的操作接口
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.ISerialConnectingPlugin.OnSerialConnecting(TouchSocket.SerialPorts.ISerialPortSession,TouchSocket.Sockets.ConnectingEventArgs)">
+            <summary>
+            在串行连接建立之前触发的事件处理程序
+            此方法允许在实际连接建立之前执行一些操作，比如数据验证或预处理
+            </summary>
+            <param name="client">串行会话客户端，表示与之通信的物理或虚拟串行端口</param>
+            <param name="e">连接事件参数，包含有关连接事件的额外信息</param>
+            <returns>异步任务，表示事件处理的异步操作</returns>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.ISerialReceivedPlugin">
+            <summary>
+            定义串行数据接收插件的接口。
+            继承自IPlugin接口，特定于串行端口数据接收操作。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.ISerialReceivedPlugin.OnSerialReceived(TouchSocket.SerialPorts.ISerialPortSession,TouchSocket.Sockets.ReceivedDataEventArgs)">
+            <summary>
+            当串行端口接收到数据时触发的异步事件处理方法。
+            </summary>
+            <param name="client">触发数据接收事件的串行端口会话对象。</param>
+            <param name="e">包含接收数据事件相关信息的事件参数对象。</param>
+            <returns>一个Task对象，标识异步操作的完成。</returns>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.ISerialReceivingPlugin">
+            <summary>
+            定义了串行接收插件的接口。
+            继承自通用插件接口IPlugin，专门用于处理串行端口接收操作。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.ISerialReceivingPlugin.OnSerialReceiving(TouchSocket.SerialPorts.ISerialPortSession,TouchSocket.Sockets.ByteBlockEventArgs)">
+            <summary>
+            当串行端口接收到数据时触发的异步事件处理方法。
+            </summary>
+            <param name="client">触发事件的串行端口会话对象。</param>
+            <param name="e">包含接收数据的事件参数对象。</param>
+            <returns>一个Task对象，代表异步操作的结果。</returns>
+        </member>
+        <member name="T:TouchSocket.SerialPorts.ISerialSendingPlugin">
+            <summary>
+            串行发送插件接口，继承自通用插件接口IPlugin
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SerialPorts.ISerialSendingPlugin.OnSerialSending(TouchSocket.SerialPorts.ISerialPortSession,TouchSocket.Sockets.SendingEventArgs)">
+            <summary>
+            在串行数据发送前触发的事件处理程序
+            </summary>
+            <param name="client">串行端口会话客户端</param>
+            <param name="e">发送事件参数</param>
+            <returns>异步任务</returns>
+        </member>
+        <member name="T:TouchSocket.Sockets.InternalReceiver">
+            <summary>
+            Receiver
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Sockets.InternalReceiver.#ctor(TouchSocket.Sockets.IReceiverClient{TouchSocket.Sockets.IReceiverResult})">
+            <summary>
+            Receiver
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:TouchSocket.Sockets.InternalReceiver.ReadAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Sockets.InternalReceiver.InputReceive(TouchSocket.Core.ByteBlock,TouchSocket.Core.IRequestInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Sockets.InternalReceiver.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Sockets.InternalReceiverResult">
+            <summary>
+            ReceiverResult
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Sockets.InternalReceiverResult.#ctor(System.Action)">
+            <summary>
+            ReceiverResult
+            </summary>
+            <param name="disAction"></param>
+        </member>
+        <member name="P:TouchSocket.Sockets.InternalReceiverResult.ByteBlock">
+            <summary>
+            字节块
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Sockets.InternalReceiverResult.RequestInfo">
+            <summary>
+            数据对象
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Sockets.InternalReceiverResult.Dispose">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocket.SocketIo</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.SocketIo.SocketIoConnectException">
+            <summary>
+            SocketIo连接异常
+            </summary>
+        </member>
+        <member name="T:TouchSocket.SocketIo.SocketIoResponseExtension">
+            <summary>
+            SocketIoResponseExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.SocketIo.ISocketIoHandshakedPlugin.OnSocketIoHandshaked(System.Object,TouchSocket.SocketIo.SocketIoVerifyEventArgs)">
+            <summary>
+            在SocketIo完成握手连接之后
+            </summary>
+            <param name="client"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.SocketIo.ISocketIoHandshakingPlugin.OnSocketIoHandshaking(System.Object,TouchSocket.SocketIo.SocketIoVerifyEventArgs)">
+            <summary>
+            在SocketIo握手连接之前
+            </summary>
+            <param name="client"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

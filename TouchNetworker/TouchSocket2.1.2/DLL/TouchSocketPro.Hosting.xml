@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocketPro.Hosting</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions">
+            <summary>
+            ServiceCollectionProExtensions
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddNamedPipeService``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加NamedPipeService服务。
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImpService"></typeparam>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddNamedPipeService(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加NamedPipeService服务。并使用<see cref="T:TouchSocket.NamedPipe.INamedPipeService"/>注册服务。
+            </summary>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddNamedPipeDmtpService``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加NamedPipeDmtpService服务。
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImpService"></typeparam>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddNamedPipeDmtpService(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加NamedPipeDmtpService服务。并使用<see cref="T:TouchSocket.Dmtp.INamedPipeDmtpService"/>注册服务。
+            </summary>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddSingletonNamedPipeClient``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加单例NamedPipeClient服务。
+            </summary>
+            <typeparam name="TClient"></typeparam>
+            <typeparam name="TImpClient"></typeparam>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddSingletonNamedPipeClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加单例NamedPipeClient服务。并使用<see cref="T:TouchSocket.NamedPipe.INamedPipeClient"/>注册服务。
+            </summary>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddTransientNamedPipeClient``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加瞬态NamedPipeClient服务。
+            </summary>
+            <typeparam name="TClient"></typeparam>
+            <typeparam name="TImpClient"></typeparam>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddTransientNamedPipeClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加瞬态NamedPipeClient服务。并使用<see cref="T:TouchSocket.NamedPipe.INamedPipeClient"/>注册服务。
+            </summary>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddScopedNamedPipeClient``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加Scoped NamedPipeClient服务。
+            </summary>
+            <typeparam name="TClient"></typeparam>
+            <typeparam name="TImpClient"></typeparam>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddScopedNamedPipeClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加Scoped NamedPipeClient服务。并使用<see cref="T:TouchSocket.NamedPipe.INamedPipeClient"/>注册服务。
+            </summary>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddSingletonNamedPipeDmtpClient``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加单例NamedPipeDmtpClient服务。
+            </summary>
+            <typeparam name="TClient"></typeparam>
+            <typeparam name="TImpClient"></typeparam>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddSingletonNamedPipeDmtpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加单例NamedPipeDmtpClient服务。并使用<see cref="T:TouchSocket.Dmtp.INamedPipeDmtpClient"/>注册服务。
+            </summary>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddTransientNamedPipeDmtpClient``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加瞬态NamedPipeDmtpClient服务。
+            </summary>
+            <typeparam name="TClient"></typeparam>
+            <typeparam name="TImpClient"></typeparam>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddTransientNamedPipeDmtpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加瞬态NamedPipeDmtpClient服务。并使用<see cref="T:TouchSocket.Dmtp.INamedPipeDmtpClient"/>注册服务。
+            </summary>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddScopedNamedPipeDmtpClient``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加Scoped NamedPipeDmtpClient服务。
+            </summary>
+            <typeparam name="TClient"></typeparam>
+            <typeparam name="TImpClient"></typeparam>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionProExtensions.AddScopedNamedPipeDmtpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.TouchSocketConfig})">
+            <summary>
+            添加Scoped NamedPipeDmtpClient服务。并使用<see cref="T:TouchSocket.Dmtp.INamedPipeDmtpClient"/>注册服务。
+            </summary>
+            <param name="services"></param>
+            <param name="actionConfig"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocket.XmlRpc</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.XmlRpc.XmlRpcAttribute">
+            <summary>
+            适用于XmlRpc的标记
+            </summary>
+        </member>
+        <member name="M:TouchSocket.XmlRpc.XmlRpcAttribute.#ctor(System.Boolean)">
+            <summary>
+             适用于XmlRpc的标记.
+             <para>是否仅以函数名调用，当为True是，调用时仅需要传入方法名即可。</para>
+            </summary>
+            <param name="methodInvoke"></param>
+        </member>
+        <member name="M:TouchSocket.XmlRpc.XmlRpcAttribute.#ctor">
+            <summary>
+            适用于XmlRpc的标记
+            </summary>
+        </member>
+        <member name="M:TouchSocket.XmlRpc.XmlRpcAttribute.#ctor(System.String)">
+            <summary>
+            适用于XmlRpc的标记.
+            </summary>
+            <param name="invokenKey"></param>
+        </member>
+        <member name="M:TouchSocket.XmlRpc.XmlRpcAttribute.GetGenericConstraintTypes">
+            <inheritdoc/>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.XmlRpc.XmlRpcClient">
+            <summary>
+            XmlRpc客户端
+            </summary>
+        </member>
+        <member name="M:TouchSocket.XmlRpc.XmlRpcClient.ConnectAsync(System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.XmlRpc.XmlRpcClient.InvokeAsync(System.String,System.Type,TouchSocket.Rpc.IInvokeOption,System.Object[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.XmlRpc.IXmlRpcCallContext">
+            <summary>
+            IXmlRpcCallContext
+            </summary>
+        </member>
+        <member name="P:TouchSocket.XmlRpc.IXmlRpcCallContext.XmlString">
+            <summary>
+            XmlRpc的调用字符串。
+            </summary>
+        </member>
+        <member name="T:TouchSocket.XmlRpc.IXmlRpcClient">
+            <summary>
+            IWebApiClient
+            </summary>
+        </member>
+        <member name="T:TouchSocket.XmlRpc.XmlRpcParserPlugin">
+            <summary>
+            XmlRpc解析器
+            </summary>
+        </member>
+        <member name="M:TouchSocket.XmlRpc.XmlRpcParserPlugin.#ctor(TouchSocket.Rpc.IRpcServerProvider,TouchSocket.Core.IResolver)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:TouchSocket.XmlRpc.XmlRpcParserPlugin.ActionMap">
+            <summary>
+            XmlRpc调用
+            </summary>
+        </member>
+        <member name="P:TouchSocket.XmlRpc.XmlRpcParserPlugin.RpcStore">
+            <summary>
+            所属服务器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.XmlRpc.XmlRpcParserPlugin.XmlRpcUrl">
+            <summary>
+            当挂载在<see cref="T:TouchSocket.Http.HttpService"/>时，匹配Url然后响应。当设置为null或空时，会全部响应。
+            </summary>
+        </member>
+        <member name="M:TouchSocket.XmlRpc.XmlRpcParserPlugin.OnHttpRequest(TouchSocket.Http.IHttpSessionClient,TouchSocket.Http.HttpContextEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.XmlRpc.XmlRpcParserPlugin.SetXmlRpcUrl(System.String)">
+            <summary>
+            当挂载在<see cref="T:TouchSocket.Http.HttpService"/>时，匹配Url然后响应。当设置为null或空时，会全部响应。
+            </summary>
+            <param name="xmlRpcUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.XmlRpc.XmlRpcRealityProxy`3">
+            <summary>
+            XmlRpcRealityProxy
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TClient"></typeparam>
+            <typeparam name="TAttribute"></typeparam>
+        </member>
+        <member name="T:TouchSocket.XmlRpc.XmlRpcRealityProxy`2">
+            <summary>
+            XmlRpcRealityProxy
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TClient"></typeparam>
+        </member>
+        <member name="T:TouchSocket.XmlRpc.XmlRpcRealityProxy`1">
+            <summary>
+            XmlRpcRealityProxy
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:TouchSocket.Sockets.XmlRpcConfigExtensions">
+            <summary>
+            XmlRpcConfigExtensions
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Core.XmlRpcPluginManagerExtension">
+            <summary>
+            XmlRpcPluginManagerExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Core.XmlRpcPluginManagerExtension.UseXmlRpc(TouchSocket.Core.IPluginManager)">
+            <summary>
+            使用XmlRpc的插件。仅服务器可用。
+            </summary>
+            <param name="pluginManager"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Resources.TouchSocketXmlRpcResource">
+            <summary>
+            TouchSocketXmlRpc资源枚举
+            </summary>
+        </member>
+    </members>
+</doc>

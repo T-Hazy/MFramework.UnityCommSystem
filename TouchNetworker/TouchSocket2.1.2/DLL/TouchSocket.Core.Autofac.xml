@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocket.Core.Autofac</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.Core.AutofacConfigExtension">
+            <summary>
+            AutofacConfigExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacConfigExtension.ConfigureContainer(Autofac.ContainerBuilder,System.Action{TouchSocket.Core.IRegistrator})">
+            <summary>
+            配置容器。
+            </summary>
+            <param name="containerBuilder"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacConfigExtension.UseAutofacContainer(TouchSocket.Core.TouchSocketConfig,Autofac.ContainerBuilder)">
+            <summary>
+            使用<see cref="T:TouchSocket.Core.AutofacContainer"/>作为容器。
+            <para>
+            注意：使用此方法，在构建组件时，内部会自行调用<see cref="M:Autofac.ContainerBuilder.Build(Autofac.Builder.ContainerBuildOptions)"/>.
+            </para>
+            </summary>
+            <param name="config"></param>
+            <param name="containerBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacConfigExtension.UseAutofacContainer(TouchSocket.Core.TouchSocketConfig,Autofac.IContainer)">
+            <summary>
+            使用<see cref="T:TouchSocket.Core.AutofacContainer"/>作为容器。
+            <para>
+            注意：使用此方法，在构建组件时，内部会直接使用解决器，不再调用<see cref="M:Autofac.ContainerBuilder.Build(Autofac.Builder.ContainerBuildOptions)"/>.
+            </para>
+            </summary>
+            <param name="config"></param>
+            <param name="container"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacConfigExtension.UseAutofacContainer(TouchSocket.Core.TouchSocketConfig)">
+            <summary>
+            使用<see cref="T:TouchSocket.Core.AutofacContainer"/>作为容器。
+            </summary>
+            <para>
+            注意：使用此方法，在构建组件时，内部会自行调用<see cref="M:Autofac.ContainerBuilder.Build(Autofac.Builder.ContainerBuildOptions)"/>.
+            </para>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Core.AutofacContainer">
+            <summary>
+            AutofacContainer
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.#ctor(Autofac.ContainerBuilder)">
+            <summary>
+            AutofacContainer
+            </summary>
+            <param name="containerBuilder"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.#ctor(Autofac.IContainer)">
+            <summary>
+            AutofacContainer
+            </summary>
+            <param name="container"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.BuildResolver">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.GetDescriptors">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.IsRegistered(System.Type,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.IsRegistered(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.Register(TouchSocket.Core.DependencyDescriptor,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.Register(TouchSocket.Core.DependencyDescriptor)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.Unregister(TouchSocket.Core.DependencyDescriptor,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.Unregister(TouchSocket.Core.DependencyDescriptor)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.GetService(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.Resolve(System.Type,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AutofacContainer.Resolve(System.Type)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocket.Core.DependencyInjection</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.Core.AspNetCoreConfigExtension">
+            <summary>
+            AspNetCoreConfigExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCoreConfigExtension.UseAspNetCoreContainer(TouchSocket.Core.TouchSocketConfig,Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            使用<see cref="T:TouchSocket.Core.AspNetCore.AspNetCoreContainer"/>作为容器。
+            </summary>
+            <param name="config"></param>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCoreConfigExtension.ConfigureContainer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{TouchSocket.Core.IRegistrator})">
+            <summary>
+            配置容器。
+            </summary>
+            <param name="services"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Core.AspNetCore.AspNetCoreContainer">
+            <summary>
+            AspNetCoreContainer
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            初始化一个IServiceCollection的容器。
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.BuildResolver">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.BuildResolver(System.IServiceProvider)">
+            <summary>
+            以传入的<see cref="T:System.IServiceProvider"/>作为服务提供
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.GetDescriptors">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.IsRegistered(System.Type,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.IsRegistered(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.Register(TouchSocket.Core.DependencyDescriptor,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.Register(TouchSocket.Core.DependencyDescriptor)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.Unregister(TouchSocket.Core.DependencyDescriptor,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.Unregister(TouchSocket.Core.DependencyDescriptor)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.GetService(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.Resolve(System.Type,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Core.AspNetCore.AspNetCoreContainer.Resolve(System.Type)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

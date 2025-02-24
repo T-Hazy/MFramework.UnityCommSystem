@@ -1,0 +1,633 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocketPro.Modbus</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.Modbus.BooleanDataPartition">
+            <summary>
+            存储布尔类型的数据区
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.BooleanDataPartition.#ctor(System.Int32,System.Boolean[])">
+            <summary>
+            存储布尔类型的数据区
+            </summary>
+            <param name="startingAddress"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:TouchSocket.Modbus.BooleanDataPartition.#ctor(System.Int32,System.Int32)">
+            <summary>
+            存储布尔类型的数据区
+            </summary>
+            <param name="startingAddress"></param>
+            <param name="quantity"></param>
+        </member>
+        <member name="M:TouchSocket.Modbus.BooleanDataPartition.Read(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.BooleanDataPartition.Write(System.Int32,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.BooleanDataPartition.Write(System.Int32,System.Boolean[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.DataPartition`1">
+            <summary>
+            数据区
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:TouchSocket.Modbus.DataPartition`1.#ctor(System.Int32,`0[])">
+            <summary>
+            初始化一个数据区
+            </summary>
+            <param name="startingAddress"></param>
+            <param name="values"></param>
+        </member>
+        <member name="P:TouchSocket.Modbus.DataPartition`1.LockSlim">
+            <summary>
+            读写锁
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.DataPartition`1.StartingAddress">
+            <summary>
+            起始位置
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.DataPartition`1.Values">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.DataPartition`1.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.DataPartition`1.Read(System.Int32,System.Int32)">
+            <summary>
+            读取
+            </summary>
+            <param name="startingAddress"></param>
+            <param name="quantity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Modbus.DataPartition`1.Write(System.Int32,`0)">
+            <summary>
+            写入单个数据
+            </summary>
+            <param name="startingAddress"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Modbus.DataPartition`1.Write(System.Int32,`0[])">
+            <summary>
+            写入多个数据
+            </summary>
+            <param name="startingAddress"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusDataLocater">
+            <summary>
+            Modbus数据定位器
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusDataLocater.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            初始化一个数据定位器
+            </summary>
+            <param name="coilsQuantity"></param>
+            <param name="discreteInputsQuantity"></param>
+            <param name="holdingRegistersQuantity"></param>
+            <param name="inputRegistersQuantity"></param>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusDataLocater.#ctor">
+            <summary>
+            初始化一个数据定位器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusDataLocater.Coils">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusDataLocater.DiscreteInputs">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusDataLocater.HoldingRegisters">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusDataLocater.InputRegisters">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusDataLocater.ExecuteAsync(TouchSocket.Modbus.IModbusRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusResult">
+            <summary>
+            ModbusResult
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusResult.#ctor(System.Byte[],TouchSocket.Modbus.ModbusErrorCode)">
+            <summary>
+            ModbusResult
+            </summary>
+            <param name="data"></param>
+            <param name="errorCode"></param>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusResult.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusResult.ErrorCode">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.ShortDataPartition">
+            <summary>
+            存储short类型的数据区
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ShortDataPartition.#ctor(System.Int32,System.Int16[])">
+            <summary>
+            存储short类型的数据区
+            </summary>
+            <param name="startingAddress"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:TouchSocket.Modbus.ShortDataPartition.#ctor(System.Int32,System.Int32)">
+            <summary>
+            存储short类型的数据区
+            </summary>
+            <param name="startingAddress"></param>
+            <param name="quantity"></param>
+        </member>
+        <member name="M:TouchSocket.Modbus.ShortDataPartition.Read(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ShortDataPartition.Write(System.Int32,System.Int16)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ShortDataPartition.Write(System.Int32,System.Int16[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusRtuOverTcpSlave">
+            <summary>
+            基于Tcp协议，且使用Rtu数据的丛站接口
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusRtuOverTcpSlave.ModbusDataLocater">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusRtuOverTcpSlave.NewClient">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusRtuOverTcpSlaveSessionClient">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusRtuOverTcpSlaveSessionClient.OnTcpConnecting(TouchSocket.Sockets.ConnectingEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusRtuOverUdpSlave">
+            <summary>
+            基于Udp协议，且使用Rtu数据格式的从站接口
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusRtuOverUdpSlave.ModbusDataLocater">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusRtuOverUdpSlave.LoadConfig(TouchSocket.Core.TouchSocketConfig)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusRtuSlave">
+            <summary>
+            基于串口的Modbus从站
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusRtuSlave.ModbusDataLocater">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusRtuSlave.OnSerialConnecting(TouchSocket.Sockets.ConnectingEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusTcpSlave">
+            <summary>
+            基于Tcp的Modbus从站接口
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusTcpSlave.ModbusDataLocater">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusTcpSlave.NewClient">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusTcpSlaveSessionClient">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusTcpSlaveSessionClient.OnTcpConnecting(TouchSocket.Sockets.ConnectingEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusUdpSlave">
+            <summary>
+            基于Udp协议的Modbus从站
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusUdpSlave.ModbusDataLocater">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusUdpSlave.LoadConfig(TouchSocket.Core.TouchSocketConfig)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusSlaveExecutedEventArgs">
+            <summary>
+            ModbusSlaveExecutedEventArgs
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusSlaveExecutedEventArgs.#ctor(TouchSocket.Sockets.IClient,TouchSocket.Modbus.IModbusResponse,TouchSocket.Sockets.Protocol,TouchSocket.Modbus.IModbusRequest)">
+            <summary>
+            ModbusSlaveExecutedEventArgs
+            </summary>
+            <param name="client"></param>
+            <param name="response"></param>
+            <param name="protocol"></param>
+            <param name="request"></param>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlaveExecutedEventArgs.Client">
+            <summary>
+            用于实际通讯的通讯器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlaveExecutedEventArgs.Response">
+            <summary>
+            响应结果
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlaveExecutedEventArgs.Protocol">
+            <summary>
+            协议类型
+            <para>
+            请使用<see cref="T:TouchSocket.Modbus.TouchSocketModbusUtility"/>的静态成员做对比。例如：<see cref="F:TouchSocket.Modbus.TouchSocketModbusUtility.ModbusTcp"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlaveExecutedEventArgs.Request">
+            <summary>
+            Modbus请求
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusSlaveExecutingEventArgs">
+            <summary>
+            ModbusSlaveExecutingEventArgs
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusSlaveExecutingEventArgs.#ctor(TouchSocket.Modbus.IModbusRequest,TouchSocket.Sockets.Protocol,TouchSocket.Sockets.IClient)">
+            <summary>
+            ModbusSlaveExecutingEventArgs
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlaveExecutingEventArgs.Client">
+            <summary>
+            用于实际通讯的通讯器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlaveExecutingEventArgs.ErrorCode">
+            <summary>
+            当<see cref="P:TouchSocket.Core.PermitEventArgs.IsPermitOperation"/>为false时，可以返回设定的错误码。
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlaveExecutingEventArgs.Protocol">
+            <summary>
+            协议类型
+            <para>
+            请使用<see cref="T:TouchSocket.Modbus.TouchSocketModbusUtility"/>的静态成员做对比。例如：<see cref="F:TouchSocket.Modbus.TouchSocketModbusUtility.ModbusTcp"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlaveExecutingEventArgs.Request">
+            <summary>
+            Modbus请求
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusDataLocaterExtension">
+            <summary>
+            ModbusDataLocaterExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusDataLocaterExtension.CreateDataLocaterMaster(TouchSocket.Modbus.IModbusDataLocater)">
+            <summary>
+            创建一个本地可以直接读写<see cref="T:TouchSocket.Modbus.IModbusDataLocater"/>的主站。
+            </summary>
+            <param name="modbusDataLocater"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusMasterProExtension">
+            <summary>
+            ModbusMasterProExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusMasterProExtension.CreateModbusObject``1(TouchSocket.Modbus.IModbusMaster)">
+            <summary>
+            创建一个Modbus对象类型。
+            </summary>
+            <typeparam name="TModbusObject"></typeparam>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusProContainerExtension">
+            <summary>
+            ModbusProContainerExtension
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusProPluginsManagerExtension">
+            <summary>
+            ModbusProPluginsManagerExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusProPluginsManagerExtension.AddModbusSlavePoint(TouchSocket.Core.IPluginManager)">
+            <summary>
+            添加一个Modbus站点
+            </summary>
+            <param name="pluginManager"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusSlaveExtension">
+            <summary>
+            ModbusSlaveExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusSlaveExtension.GetSlavePointBySlaveId(TouchSocket.Modbus.IModbusSlave,System.Byte)">
+            <summary>
+            通过站号获取实际站点。
+            </summary>
+            <param name="modbusSlave"></param>
+            <param name="slaveId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusSlavePointExtension">
+            <summary>
+            ModbusSlavePointExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusSlavePointExtension.SetModbusDataLocater``1(``0,TouchSocket.Modbus.IModbusDataLocater)">
+            <summary>
+            设置Modbus数据定位器
+            </summary>
+            <param name="modbusSlavePoint"></param>
+            <param name="modbusDataLocater"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusSlavePointExtension.SetSlaveId``1(``0,System.Byte)">
+            <summary>
+            设置站号
+            </summary>
+            <typeparam name="TModbusSlavePoint"></typeparam>
+            <param name="modbusSlavePoint"></param>
+            <param name="slaveId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusSlavePointExtension.UseIgnoreSlaveId``1(``0)">
+            <summary>
+            忽略站号验证
+            </summary>
+            <typeparam name="TModbusSlavePoint"></typeparam>
+            <param name="modbusSlavePoint"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Modbus.IDataLocaterMaster">
+            <summary>
+            Modbus本地访问主站接口
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.IModbusDataLocater">
+            <summary>
+            Modbus数据定位器接口
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.IModbusDataLocater.Coils">
+            <summary>
+            线圈
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.IModbusDataLocater.DiscreteInputs">
+            <summary>
+            离散输入
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.IModbusDataLocater.HoldingRegisters">
+            <summary>
+            保持寄存器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.IModbusDataLocater.InputRegisters">
+            <summary>
+            输入寄存器
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.IModbusDataLocater.ExecuteAsync(TouchSocket.Modbus.IModbusRequest)">
+            <summary>
+            异步执行Modbus请求
+            </summary>
+            <param name="modbusRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.Modbus.IModbusRtuOverTcpSlave">
+            <summary>
+            基于Tcp协议，且使用Rtu数据的丛站接口
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.IModbusRtuOverUdpSlave">
+            <summary>
+            基于Udp协议，且使用Rtu数据格式的从站接口
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.IModbusRtuSlave">
+            <summary>
+            基于串口的Modbus从站接口
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.IModbusSlave">
+            <summary>
+            Modbus从站接口
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.IModbusSlavePoint">
+            <summary>
+            Modbus从站站点
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.IModbusSlavePoint.ModbusDataLocater">
+            <summary>
+            Modbus数据定位器
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.IModbusSlavePoint.SlaveId">
+            <summary>
+            站号
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.IModbusSlavePoint.IgnoreSlaveId">
+            <summary>
+            是否忽略站号
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.IModbusTcpSlave">
+            <summary>
+            基于Tcp的Modbus从站接口
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.IModbusUdpSlave">
+            <summary>
+            基于Udp协议的Modbus从站接口
+            </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusObject">
+            <summary>
+            Modbus对象抽象类
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusObject.Client">
+            <summary>
+            实际通讯的Modbus客户端
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusObject.SetValueArray``1(``0[],System.String)">
+            <summary>
+            设置数组值
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <param name="values"></param>
+            <param name="propertyName"></param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusObject.SetValue``1(``0,System.String)">
+            <summary>
+            设置单个值
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <param name="value"></param>
+            <param name="propertyName"></param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusObject.GetValue``1(System.String)">
+            <summary>
+            获取单个值
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <param name="propertyName"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:TouchSocket.Modbus.ModbusObject.GetValueArray``1(System.String)">
+            <summary>
+            获取数组值
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <param name="propertyName"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="T:TouchSocket.Modbus.ModbusPropertyAttribute">
+            <summary>
+            Modbus属性特性
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusPropertyAttribute.SlaveId">
+            <summary>
+            站号，默认1
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusPropertyAttribute.Timeout">
+            <summary>
+            超时时间，默认1000ms
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusPropertyAttribute.Partition">
+            <summary>
+            存储区
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusPropertyAttribute.EndianType">
+            <summary>
+            端序
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusPropertyAttribute.StartAddress">
+            <summary>
+            起始位置
+            </summary>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusPropertyAttribute.Quantity">
+             <summary>
+             数组成员数量。
+            
+             <para>
+             该属性仅在数组属性时生效。且表述的是数组成员数量。而非寄存器数量。例如当属性是int32[]，Quantity=5时，表示会操作5个int32的值，即10个寄存器。
+             </para>
+             </summary>
+        </member>
+        <member name="T:TouchSocket.Modbus.Partition">
+            <summary>
+            Modbus存储区
+            </summary>
+        </member>
+        <member name="F:TouchSocket.Modbus.Partition.Coils">
+            <summary>
+            线圈存储区
+            </summary>
+        </member>
+        <member name="F:TouchSocket.Modbus.Partition.DiscreteInputs">
+            <summary>
+            离散输入存储区
+            </summary>
+        </member>
+        <member name="F:TouchSocket.Modbus.Partition.HoldingRegisters">
+            <summary>
+            保持寄存器存储区
+            </summary>
+        </member>
+        <member name="F:TouchSocket.Modbus.Partition.InputRegisters">
+            <summary>
+            输入寄存器存储区
+            </summary>
+        </member>
+        <member name="M:TouchSocket.Modbus.IModbusSlaveExecutedPlugin.OnModbusSlaveExecuted(TouchSocket.Modbus.IModbusSlavePoint,TouchSocket.Modbus.ModbusSlaveExecutedEventArgs)">
+            <summary>
+            当Slave执行request之后。
+            <para>
+            </para>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TouchSocket.Modbus.IModbusSlaveExecutingPlugin.OnModbusSlaveExecuting(TouchSocket.Modbus.IModbusSlavePoint,TouchSocket.Modbus.ModbusSlaveExecutingEventArgs)">
+            <summary>
+            当Slave执行request之前。
+            <para>
+            </para>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlavePoint.IgnoreSlaveId">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlavePoint.ModbusDataLocater">
+            <inheritdoc/>
+        </member>
+        <member name="P:TouchSocket.Modbus.ModbusSlavePoint.SlaveId">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

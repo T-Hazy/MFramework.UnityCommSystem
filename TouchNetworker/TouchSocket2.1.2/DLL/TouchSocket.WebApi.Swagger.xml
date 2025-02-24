@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TouchSocket.WebApi.Swagger</name>
+    </assembly>
+    <members>
+        <member name="T:TouchSocket.WebApi.Swagger.SwaggerDescriptionAttribute">
+            <summary>
+            Swagger描述特性
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.Swagger.SwaggerDescriptionAttribute.#ctor(System.String[])">
+            <summary>
+            Swagger描述特性
+            </summary>
+            <param name="groups"></param>
+        </member>
+        <member name="M:TouchSocket.WebApi.Swagger.SwaggerDescriptionAttribute.#ctor">
+            <summary>
+            Swagger描述特性
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.Swagger.SwaggerDescriptionAttribute.Groups">
+            <summary>
+            分组
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.String">
+            <summary>
+            字符串
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Number">
+            <summary>
+            数值
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Integer">
+            <summary>
+            整数
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Boolean">
+            <summary>
+            布尔值
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Binary">
+            <summary>
+            二进制（如文件）
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.BinaryCollection">
+            <summary>
+            二进制集合
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Record">
+            <summary>
+            记录值（字典）
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Tuple">
+            <summary>
+            元组值
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Array">
+            <summary>
+            数组
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Object">
+            <summary>
+            对象
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Struct">
+            <summary>
+            结构
+            </summary>
+        </member>
+        <member name="F:TouchSocket.WebApi.Swagger.OpenApiDataTypes.Any">
+            <summary>
+            Any
+            </summary>
+        </member>
+        <member name="T:TouchSocket.WebApi.Swagger.SwaggerPluginManagerExtension">
+            <summary>
+            SwaggerPluginManagerExtension
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.Swagger.SwaggerPluginManagerExtension.UseSwagger(TouchSocket.Core.IPluginManager)">
+            <summary>
+            使用<see cref="T:TouchSocket.WebApi.Swagger.SwaggerPlugin"/>插件。
+            </summary>
+            <param name="pluginManager"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TouchSocket.WebApi.Swagger.SwaggerPlugin">
+            <summary>
+            SwaggerPlugin
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.Swagger.SwaggerPlugin.#ctor(TouchSocket.Core.IResolver,TouchSocket.Core.ILog)">
+            <summary>
+            SwaggerPlugin
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.Swagger.SwaggerPlugin.LaunchBrowser">
+            <summary>
+            是否在浏览器打开Swagger页面
+            </summary>
+        </member>
+        <member name="P:TouchSocket.WebApi.Swagger.SwaggerPlugin.Prefix">
+            <summary>
+            访问Swagger的前缀，默认“swagger”
+            </summary>
+        </member>
+        <member name="M:TouchSocket.WebApi.Swagger.SwaggerPlugin.OnServerStarted(TouchSocket.Sockets.IServiceBase,TouchSocket.Sockets.ServiceStateEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.WebApi.Swagger.SwaggerPlugin.SetPrefix(System.String)">
+            <summary>
+            设置访问Swagger的前缀，默认“swagger”
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.WebApi.Swagger.SwaggerPlugin.UseLaunchBrowser">
+            <summary>
+            在浏览器打开Swagger页面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TouchSocket.WebApi.Swagger.SwaggerPlugin.Loaded(TouchSocket.Core.IPluginManager)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TouchSocket.WebApi.Swagger.SwaggerPlugin.IsFormFileCollection(System.Type)">
+            <summary>
+            检查类型是否是 IFormFileCollection 类型
+            </summary>
+            <param name="type"><see cref="T:System.Type"/></param>
+            <returns><see cref="T:System.Boolean"/></returns>
+        </member>
+    </members>
+</doc>
