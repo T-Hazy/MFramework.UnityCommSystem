@@ -28,13 +28,6 @@ namespace MFramework.CommSystem.TouchNetworker
         public bool useDataPrintPlugin = true;
 
         public int maxPrintLength = 64;
-
-        [Header("保活机制(Keep Connection)"), Tooltip("启用客户端活性检查")]
-        public bool useCheckClear;
-
-        [Tooltip("活性检查清理类型")] public CheckClearType checkClearType = CheckClearType.All;
-        [Tooltip("检查清理时间")] public int checkClearTime = 60;
-        public UnityEvent<(ITcpSession, CheckClearType)> onCheckClearClose;
         public DataHandler<ReceivedDataEventArgs> dataHandler { get; set; }
         public DataHandler<SerializableObject> serializableObjectHandler { get; set; }
         public StringHandler<StringContainer> stringHandler { get; set; }
@@ -94,14 +87,6 @@ namespace MFramework.CommSystem.TouchNetworker
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
-                }
-
-                //活性检测机制(心跳检测)
-                if (useCheckClear)
-                {
-                    manager.UseCheckClear().SetCheckClearType(checkClearType)
-                        .SetTick(TimeSpan.FromSeconds(checkClearTime))
-                        .SetOnClose((session, type) => onCheckClearClose.Invoke((session, type)));
                 }
             });
             await sessionClient.SetupAsync(config);

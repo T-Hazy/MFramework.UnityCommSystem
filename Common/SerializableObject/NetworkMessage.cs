@@ -1,7 +1,5 @@
 using System;
 using MFramework.CommSystem;
-using Unity.VisualScripting;
-
 namespace MFramework.Network.Core
 {
     public class NetworkMessage : SerializableObject
