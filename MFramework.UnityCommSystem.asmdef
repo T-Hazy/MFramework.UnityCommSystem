@@ -1,3 +1,16 @@
 {
-	"name": "MFramework.UnityCommSystem"
+    "name": "MFramework.UnityCommSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ddcdf0c1214b6294287f12ba36883975"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
